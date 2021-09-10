@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "tiny-slider": "^2.9.3"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MHMDHIDR/mhmdhidr.github.io/issues"
   },
-  "homepage": "https://github.com/MHMDHIDR/mhmdhidr.github.io#readme"
+  "homepage": "https://github.com/MHMDHIDR/mhmdhidr.github.io#readme",
+  "dependencies": {
+    "tiny-slider": "^2.9.3"
+  }
 }
