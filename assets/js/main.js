@@ -1,44 +1,78 @@
-"use strict";
+'use strict';
+import { tns } from '../../node_modules/tiny-slider/src/tiny-slider.js';
+
+tns({
+  container: '.projects',
+  items: 3,
+  nav: false,
+  slideBy: 'page',
+  mouseDrag: true
+});
+const prevBtn = document.querySelector('button[data-controls="prev"]');
+const nextBtn = document.querySelector('button[data-controls="next"]');
+prevBtn.innerHTML = `
+  <img
+    class="previous project-thumbnail"
+    src="assets/img/arrow.svg"
+    alt="previous project"
+  />
+`;
+
+nextBtn.innerHTML = `
+  <img
+    class="next project-thumbnail"
+    src="assets/img/arrow.svg"
+    alt="next project"
+  />
+`;
+
+prevBtn.style.border = '0';
+nextBtn.style.border = '0';
 
 // animation onload
 window.onload = () => {
-  const projPreviews = document.querySelectorAll('.projects-preview a')
-  projPreviews[0].style.right = projPreviews[2].style.right = "0"
-  projPreviews[1].style.left = "0"
-}
+  const projPreviews = document.querySelectorAll('.projects-preview a');
+  projPreviews[0].style.right = projPreviews[2].style.right = '0';
+  projPreviews[1].style.left = '0';
+};
 
 // scroll to section
 const navLinks = document.querySelectorAll('.hero a');
-navLinks.forEach(link => {
-  if(link.hasAttribute('data-link')) { // check if link has data-link attr
-    link.addEventListener('click', e => {
+navLinks.forEach((link) => {
+  if (link.hasAttribute('data-link')) {
+    // check if link has data-link attr
+    link.addEventListener('click', (e) => {
       e.preventDefault(); // prevent reloading page
       // getting value of data-link
       const linkTarget = e.target.dataset.link;
-      window.scrollTo({ // scroll the window
+      window.scrollTo({
+        // scroll the window
         // getting top position of the Targeted element Class (50 means sp (section padding)
         // put the scroll to the top of the targeted element (-) minus 50px of padding
-        top: (document.getElementById(linkTarget).offsetTop) - 50,
-        behavior: "smooth"
-      }) 
-    })
+        top: document.getElementById(linkTarget).offsetTop - 50,
+        behavior: 'smooth'
+      });
+    });
   }
 });
 
 // windows scrollTop button
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   // scroll to the top of page function
-  const scrollTop = document.querySelector(".scroll-top");
-  const navFixed = document.querySelector(".navbar.fixed");
+  const scrollTop = document.querySelector('.scroll-top');
+  const navFixed = document.querySelector('.navbar.fixed');
   // show and hide btn
-  scrollTop.classList.toggle("active", window.scrollY > 500);
-  // toggle shrink on fixed nav
-  navFixed.classList.toggle("shrink", window.scrollY > 100);
+  scrollTop.classList.toggle('active', window.scrollY > 500);
+  // toggle shrink if user scrolled half hero section
+  navFixed.classList.toggle(
+    'shrink',
+    window.scrollY > document.querySelector('.hero').clientHeight / 2
+  );
   // when click scroll top
-  scrollTop.addEventListener("click", () => {
+  scrollTop.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   });
 });
@@ -51,12 +85,13 @@ const form = {
   submitBtn: document.getElementById('submitBtn'),
   formMassages: document.querySelector('.form-group:last-of-type')
 };
-form.submitBtn.addEventListener("click", (e) => {
+form.submitBtn.addEventListener('click', (e) => {
   // stop reload
   e.preventDefault();
   // Opening request
-  const request = window.XMLHttpRequest ?
-    new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+  const request = window.XMLHttpRequest
+    ? new XMLHttpRequest()
+    : new ActiveXObject('Microsoft.XMLHTTP');
   // Setting request data
   const requestData = `name=${form.name.value}&email=${form.email.value}&message=${form.message.value}`;
   // send url
@@ -76,4 +111,4 @@ form.submitBtn.addEventListener("click", (e) => {
 });
 
 // Copyrights current year
-document.querySelector('.year').innerHTML = new Date().getFullYear()
+document.querySelector('.year').innerHTML = new Date().getFullYear();

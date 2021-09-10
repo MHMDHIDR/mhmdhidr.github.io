@@ -2,6 +2,8 @@
 :root {
   /* Variables */
   --bg-color: #eee;
+  /* --hero-bg-color: linear-gradient(#08254e, #4070b4); */
+  --hero-bg-color: #08254e;
   --primary-color: #2376eb;
   --light-silver: #cfcfcf;
   --dark-silver: #8c8c8c;
@@ -28,7 +30,7 @@ body {
 }
 
 body * {
-  font-family: "Cairo", sans-serif;
+  font-family: 'Cairo', sans-serif;
 }
 
 /* To make footer stick to bottom */
@@ -41,7 +43,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 1vw;
+  width: 0;
+  height: 0;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
@@ -50,6 +53,10 @@ body {
 .container {
   width: 95%;
   margin: auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 .project-thumbnail {
@@ -77,7 +84,7 @@ body {
 }
 
 .sec-title {
-  font-family: "Fira Code", sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-size: 1.3em;
   text-align: center;
   font-weight: 700;
@@ -102,8 +109,9 @@ body {
 
 /* Hero Start */
 .hero {
-  background: linear-gradient(#08254e, #4070b4);
+  background-color: var(--hero-bg-color);
   overflow: hidden;
+  margin-bottom: 11vh;
 }
 
 .navbar {
@@ -116,14 +124,20 @@ body {
 .navbar.fixed {
   position: fixed;
   left: 0;
-  background: rgba(40, 40, 40, 0.9);
   width: 100%;
   z-index: 10;
   padding-top: 0;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .navbar.fixed .logo {
   width: 6.5rem;
+}
+
+.navbar.fixed.shrink {
+  background-color: rgba(58, 58, 58, 0.75);
+  box-shadow: 0 0.125rem 0.3rem rgb(58 58 58 / 40%);
+  backdrop-filter: saturate(180%) blur(2px);
 }
 
 .navbar.fixed.shrink .logo {
@@ -145,11 +159,11 @@ body {
   flex: 1;
   justify-content: space-evenly;
   margin: 0;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .navbar.fixed.shrink .navbar-links {
-  padding: 0.5rem 0;
+  padding: 1.3rem 0;
 }
 
 .navbar-links a {
@@ -159,7 +173,7 @@ body {
 }
 
 .navbar-links a:not(.cta):before {
-  content: "";
+  content: '';
   height: 0.17rem;
   width: 0;
   position: absolute;
@@ -197,18 +211,23 @@ body {
 
 .intro p {
   font-size: 1.1em;
+  letter-spacing: 0.3em;
+  line-height: 2rem;
   margin: 0;
 }
 
 .intro h1 {
-  font-size: 2em;
+  font-size: 2.35em;
   line-height: 1.3;
   margin: 0 0 5rem;
+  text-align: left;
+  text-transform: uppercase;
+  max-width: 67%;
 }
 
 .find-me-in p {
   font-size: 0.95em;
-  font-family: "Fira Code", sans-serif;
+  font-family: 'Fira Code', sans-serif;
 }
 
 .find-me-in a {
@@ -263,39 +282,91 @@ body {
   width: -moz-fit-content;
   margin: 1rem auto 2.5rem;
 }
+
+.heroCurve {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.heroCurve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 132px;
+}
+
+.heroCurve .shape-fill {
+  fill: var(--hero-bg-color);
+}
+
 /* Hero End */
 
 /* Latest Projects Start */
 .projects-carousel {
+  overflow: hidden;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.tns-liveregion {
+  display: none;
+}
+
+#tns1 > .tns-item {
+  width: fit-content !important;
+}
+
+.tns-ovh {
+  cursor: pointer;
+}
+
+.tns-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 3rem;
 }
 
 .projects {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .project {
-  display: inline-flex;
   border: 1px solid var(--light-silver);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 0.25rem;
 }
 
-.latest-projects .previous img,
-.latest-projects .next img {
-  width: 1.5rem;
+.project .options {
+  display: flex;
+  justify-content: space-between;
 }
 
-.latest-projects .previous img {
+.project .options .cta {
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.project .options .cta:last-child {
+  background-color: var(--darker-silver);
+}
+
+.latest-projects .previous,
+.latest-projects .next {
+  width: 1rem;
+}
+
+.latest-projects .previous {
   transform: rotate(180deg);
   margin-right: 2rem;
 }
 
-.latest-projects .next img {
+.latest-projects .next {
   margin-left: 2rem;
 }
 
@@ -314,9 +385,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--light-silver);
-  min-width: 14rem;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
+  width: 15rem;
+  max-width: 30%;
+  border-radius: 0.25rem;
   text-align: center;
 }
 
@@ -342,12 +413,11 @@ body {
 .plan ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 1rem;
 }
 .plan .cta {
   border: none;
-  padding: 0.2rem 2.5rem;
-  border-radius: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
 /* What I do End */
@@ -439,6 +509,8 @@ textarea {
   cursor: pointer;
   width: var(--size);
   height: var(--size);
+  max-width: 2.7rem;
+  max-height: 2.7rem;
   border-radius: calc(var(--size) * 0.15);
   background-color: var(--primary-color);
   position: fixed;
@@ -448,8 +520,8 @@ textarea {
   bottom: 20rem;
 }
 .scroll-top::after {
-  content: "⬆";
-  content: "☝🏽";
+  content: '⬆';
+  content: '☝🏽';
   display: block;
   height: var(--size);
   text-align: center;
