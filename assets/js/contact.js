@@ -1,7 +1,7 @@
 const ContactUs = (form) => {
   form.submitBtn.addEventListener('click', async (e) => {
     // using FormData to send constructed data
-    fetch(`https://formsubmit.co/ajax/${form.msg.value}`, {
+    fetch(`https://formsubmit.co/ajax/mr.hamood277@gmail.com`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
