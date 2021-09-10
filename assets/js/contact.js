@@ -1,9 +1,9 @@
 const ContactUs = async (form) => {
   // using FormData to send constructed data
-  const myEmail = '85ece13a15bb17a66a1d10bd8593f134';
+  const myEmailToken = '85ece13a15bb17a66a1d10bd8593f134';
 
   try {
-    const response = await fetch(`https://formsubmit.co/ajax/${myEmail}`, {
+    const response = await fetch(`https://formsubmit.co/ajax/${myEmailToken}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,8 +16,13 @@ const ContactUs = async (form) => {
       })
     });
 
-    const contactResponse = response.data;
-    console.log(contactResponse);
+    const { ok } = response;
+    if (!ok) {
+      alert("Sorry Your Message hasn't been sent! Try again Later!");
+      return;
+    }
+
+    window.location.assign('thanksForReachingOut.html');
   } catch (err) {
     console.error(err);
   }

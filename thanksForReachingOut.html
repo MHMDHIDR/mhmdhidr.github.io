@@ -24,27 +24,11 @@
 
   <body>
     <!-- ==================== hero section start ==================== -->
-    <section class="hero">
+    <section class="hero" style="margin-bottom: 0">
       <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar fixed upper">
-          <a href="./">
-            <img class="logo" src="assets/img/logo.svg" alt="Mohammed Hayder Logo" />
-          </a>
-          <ul class="navbar-links">
-            <li><a href="" data-link="latestProjects">projects</a></li>
-            <li><a href="" data-link="services">services</a></li>
-            <li><a href="" data-link="getInTouch" class="cta upper">get in touch</a></li>
-          </ul>
-        </nav>
         <div class="content">
           <!-- Intro -->
           <div class="intro">
-            <p>
-              Hi.. <br />
-              WELCOME TO MY WORLD
-            </p>
-            <h1>I’m here to Make your website idea a reality!</h1>
             <div class="find-me-in">
               <p class="upper">find me in</p>
               <a href="https://github.com/mhmdhidr" target="_blank">
@@ -54,13 +38,6 @@
                   alt="Github Projects"
                 />
               </a>
-              <!-- <a href="https://codepen.io/mhmdhidr" target="_blank">
-                <img
-                  src="assets/icons/codepen.svg"
-                  title="Take a look at my Codepen"
-                  alt="Take a look at my Codepen"
-                />
-              </a> -->
               <a href="https://instagram.com/mo.hidr" target="_blank">
                 <img
                   src="assets/icons/instagram.svg"
@@ -77,32 +54,7 @@
               </a>
             </div>
           </div>
-          <!-- Projects preview -->
-          <div class="projects-preview">
-            <a href="https://codepen.io/mhmdhidr/porject1" target="_blank">
-              <img
-                class="project-thumbnail"
-                src="assets/img/projects-preview/1.jpg"
-                alt="Project number 1"
-              />
-            </a>
-            <a href="https://www.aaeqtr.com" target="_blank">
-              <img
-                class="project-thumbnail"
-                src="assets/img/projects-preview/aaeqtr.jpg"
-                alt="AAE Qatar for Canvases and 3D Wall Clocks"
-              />
-            </a>
-            <a href="mailto:mr.hamood277@gmail.com" target="_blank">
-              <img
-                class="project-thumbnail"
-                src="assets/img/projects-preview/3.jpg"
-                alt="Project number 3"
-              />
-            </a>
-          </div>
         </div>
-        <a class="cta upper" href="" data-link="latestProjects">See More Projects</a>
       </div>
 
       <div class="heroCurve">
@@ -111,6 +63,7 @@
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
+          style="height: 5rem"
         >
           <path
             d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
@@ -132,19 +85,21 @@
     <!-- ==================== hero section end ==================== -->
 
     <!-- ==================== Services section start ==================== -->
-    <section id="services" class="services sp">
+    <section id="services" class="services sp" style="margin: 5rem 0">
       <div class="container">
-        <h2 class="sec-title upper">Thanks For Reaching Out</h2>
         <div class="plans">
-          <div class="plan recommended">
+          <div class="plan recommended" style="width: 100%">
             <!-- Plan -->
+            <h2 class="sec-title upper" style="font-size: 1.7rem">
+              Thanks For Reaching Out
+            </h2>
             <h3 class="plan__title">I Recieved Your Message!</h3>
-            <ul class="plan__features">
-              <li>I'll be in touch as soon as possible!</li>
+            <ul class="plan__features" style="font-size: 1.3rem">
+              <li>I'll be in touch as soon as possible! 😄</li>
             </ul>
-            <button class="cta upper" id="getItem">
-              <a href="/">Back to Home</a>
-            </button>
+            <a class="cta upper" href="./" style="color: #fff; font-size: 1.25rem">
+              Back to Home
+            </a>
           </div>
         </div>
       </div>
@@ -156,7 +111,5 @@
       <p class="sec-title upper">mohammed hayder &copy; <span class="year"></span></p>
     </footer>
     <!-- ==================== Footer section end ==================== -->
-
-    <script src="assets/js/main.js" type="module"></script>
   </body>
 </html>

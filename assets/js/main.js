@@ -1,5 +1,6 @@
 'use strict';
 
+import { validEmail } from './validEmail.js';
 import ContactUs from './contact.js';
 
 tns({
@@ -86,10 +87,21 @@ const form = {
   submitBtn: document.getElementById('submitBtn'),
   formMassages: document.querySelector('.form-group:last-of-type')
 };
-//Implement form
+//send form
 form.submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  ContactUs(form);
+
+  if (
+    form.name.value.trim() === '' ||
+    form.email.value.trim() === '' ||
+    form.message.value.trim() === ''
+  ) {
+    alert('Please fill in all fields!');
+  } else if (!validEmail(form.email.value.trim())) {
+    alert('Please provide a valid email so I can contact you back :D');
+  } else {
+    ContactUs(form);
+  }
 });
 
 // Copyrights current year
