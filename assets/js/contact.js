@@ -10,7 +10,7 @@ const ContactUs = (form) => {
       body: JSON.stringify({
         name: form.name.value,
         email: form.email.value,
-        message: form.msg.value
+        message: form.message.value
       })
     })
       .then((response) => response.json())
