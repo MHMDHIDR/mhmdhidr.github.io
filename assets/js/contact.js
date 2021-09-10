@@ -1,7 +1,9 @@
-const ContactUs = (form) => {
-  form.submitBtn.addEventListener('click', async (e) => {
-    // using FormData to send constructed data
-    fetch(`https://formsubmit.co/ajax/mr.hamood277@gmail.com`, {
+const ContactUs = async (form) => {
+  // using FormData to send constructed data
+  const myEmail = '85ece13a15bb17a66a1d10bd8593f134';
+
+  try {
+    const response = await fetch(`https://formsubmit.co/ajax/${myEmail}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -12,11 +14,13 @@ const ContactUs = (form) => {
         email: form.email.value,
         message: form.message.value
       })
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-  });
+    });
+
+    const contactResponse = response.data;
+    console.log(contactResponse);
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 export default ContactUs;
