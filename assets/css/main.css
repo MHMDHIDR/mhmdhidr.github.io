@@ -5,8 +5,8 @@
   /* --hero-bg-color: linear-gradient(#08254e, #4070b4); */
   --hero-bg-color: #08254e;
   --primary-color: #2376eb;
-  --light-silver: #cfcfcf;
-  --dark-silver: #8c8c8c;
+  --light-silver: #eaeaea;
+  --dark-silver: #aaaaaa;
   --darker-silver: #4d4d4d;
 
   /* Transitions */
@@ -377,26 +377,42 @@ button {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 3rem;
+  row-gap: 3rem;
 }
 
 .plan {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   background-color: var(--light-silver);
   width: 15rem;
-  max-width: 30%;
+  padding: 1rem;
+  min-width: 27%;
+  font-size: 1.05rem;
+  border: 1px dashed var(--hero-bg-color);
   border-radius: 0.25rem;
   text-align: center;
 }
 
+.plan__title {
+  font-size: 1.3rem;
+}
+
+.plan__features {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 1rem;
+  line-height: 2.5;
+}
+
 .plan.recommended {
-  margin-top: -0.7rem;
+  margin-top: -1rem;
 }
 
 .plan.recommended > span {
   color: var(--primary-color);
+  font-size: 2.3rem;
   font-weight: 700;
 }
 
@@ -410,11 +426,6 @@ button {
   font-weight: 400;
 }
 
-.plan ul {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 1rem;
-}
 .plan .cta {
   border: none;
   padding: 0.5rem;
@@ -434,7 +445,7 @@ button {
   margin-bottom: 2rem;
   width: 90%;
   margin: 0 auto 2rem;
-  border: 1px solid var(--light-silver);
+  border: 1px solid var(--dark-silver);
   border-radius: 0.5rem;
   padding: 1rem 0 0;
 }
@@ -450,7 +461,7 @@ button {
 }
 
 .form-group:focus-within {
-  border-color: var(--dark-silver);
+  border-color: var(--darker-silver);
 }
 
 .form-group span {
