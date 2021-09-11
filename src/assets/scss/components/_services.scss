@@ -1,0 +1,58 @@
+@use '../helpers/colors' as *;
+
+.plans {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $light-silver;
+  width: 15rem;
+  padding: 1rem;
+  min-width: 27%;
+  font-size: 1.05rem;
+  border: 1px dashed $hero-bg-color;
+  border-radius: 0.25rem;
+  text-align: center;
+
+  &__title {
+    font-size: 1.3rem;
+  }
+
+  &__features {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1rem;
+    line-height: 2.5;
+  }
+  &.recommended {
+    margin-top: -1rem;
+
+    & > span {
+      color: $primary-color;
+      font-size: 2.3rem;
+      font-weight: 700;
+    }
+  }
+
+  & > span {
+    font-size: 2.1em;
+    font-weight: 600;
+
+    & > small {
+      font-size: 0.5em;
+      font-weight: 400;
+    }
+  }
+  & .cta {
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+}

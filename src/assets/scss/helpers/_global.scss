@@ -1,0 +1,69 @@
+@use './colors' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* To make footer stick to bottom */
+  min-height: 100vh;
+  justify-content: space-between;
+  background-color: $bg-color;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.project-thumbnail {
+  width: 230px;
+  height: 130px;
+}
+
+.sp {
+  padding: 2rem 0;
+}
+
+.section__title {
+  font-family: 'Fira Code', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}

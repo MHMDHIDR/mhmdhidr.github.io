@@ -83,7 +83,7 @@ button {
   text-transform: uppercase;
 }
 
-.sec-title {
+.section__title {
   font-family: 'Fira Code', sans-serif;
   font-size: 1.3em;
   text-align: center;
@@ -97,9 +97,9 @@ button {
 .navbar.fixed .logo,
 .projects-preview a,
 .find-me-in a,
-.form-group,
-.scroll-top,
-.scroll-top::after {
+.form__group,
+.scroll__top,
+.scroll__top::after {
   transition: all var(--transition-duration) var(--transition-style);
   -moz-transition: all var(--transition-duration) var(--transition-style);
   -o-transition: all var(--transition-duration) var(--transition-style);
@@ -439,7 +439,7 @@ button {
   text-align: center;
 }
 
-.form-group {
+.form__group {
   position: relative;
   display: block;
   margin-bottom: 2rem;
@@ -450,8 +450,8 @@ button {
   padding: 1rem 0 0;
 }
 
-.form-group input,
-.form-group textarea {
+.form__group input,
+.form__group textarea {
   width: 100%;
   padding: 0.3rem 1rem 1rem;
   font-size: 1.2em;
@@ -460,11 +460,11 @@ button {
   border: none;
 }
 
-.form-group:focus-within {
+.form__group:focus-within {
   border-color: var(--darker-silver);
 }
 
-.form-group span {
+.form__group span {
   position: absolute;
   left: 1rem;
   top: -1.2rem;
@@ -475,12 +475,12 @@ button {
   color: var(--dark-silver);
 }
 
-div.form-group:last-child,
-.form-group.cta-btns {
+div.form__group:last-child,
+.form__group.cta-btns {
   border: none;
 }
 
-.form-group .cta {
+.form__group .cta {
   cursor: pointer;
   padding: 0.3rem 3rem;
   border: none;
@@ -491,23 +491,23 @@ textarea {
   resize: none;
 }
 
-.form-massages {
+.form__messages {
   display: flex;
   flex: 1;
   margin: 0.7em;
   padding: 0.7em;
 }
-.form-massages.succ {
+.form__messages.succ {
   color: #1b6d2e;
   background-color: #d4edda;
   border: 1px solid #c3e6cb;
 }
-.form-massages.fail {
+.form__messages.fail {
   color: #9e212e;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
 }
-.form-massages.info {
+.form__messages.info {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
@@ -515,7 +515,7 @@ textarea {
 /* Get In Touch End */
 
 /* ScrollTop Strat */
-.scroll-top {
+.scroll__top {
   --size: 5vmax;
   cursor: pointer;
   width: var(--size);
@@ -530,7 +530,7 @@ textarea {
   opacity: 0;
   bottom: 20rem;
 }
-.scroll-top::after {
+.scroll__top::after {
   content: '⬆';
   content: '☝🏽';
   display: block;
@@ -539,13 +539,13 @@ textarea {
   font-size: calc(var(--size) * 0.5);
   color: var(--light-silver);
 }
-.scroll-top:hover {
+.scroll__top:hover {
   background-color: var(--light-silver);
 }
-.scroll-top:hover::after {
+.scroll__top:hover::after {
   color: var(--primary-color);
 }
-.scroll-top.active {
+.scroll__top.active {
   pointer-events: all;
   bottom: 2rem;
   opacity: 1;

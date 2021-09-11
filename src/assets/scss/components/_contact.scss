@@ -1,0 +1,78 @@
+@use '../helpers/colors' as *;
+
+.form {
+  margin-top: 2rem;
+
+  text-align: center;
+
+  &__group {
+    position: relative;
+    display: block;
+    margin-bottom: 2rem;
+    width: 90%;
+    margin: 0 auto 2rem;
+    border: 1px solid $dark-silver;
+    border-radius: 0.5rem;
+    padding: 1rem 0 0;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.3rem 1rem 1rem;
+      font-size: 1.2em;
+      color: $darker-silver;
+      background-color: transparent;
+      border: none;
+    }
+
+    &:focus-within {
+      border-color: $darker-silver;
+    }
+
+    span {
+      position: absolute;
+      left: 1rem;
+      top: -1.2rem;
+      font-size: 1.2em;
+      background-color: #eee;
+      padding: 0 0.5rem;
+      text-transform: capitalize;
+      color: $dark-silver;
+    }
+
+    .cta {
+      cursor: pointer;
+      padding: 0.3rem 3rem;
+      border: none;
+    }
+
+    :last-child,
+    .cta-btns {
+      border: none;
+    }
+  }
+}
+
+.form__messages {
+  display: flex;
+  flex: 1;
+  margin: 0.7em;
+  padding: 0.7em;
+
+  .succ {
+    color: #1b6d2e;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  .info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+
+  .fail {
+    color: #9e212e;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+  }
+}

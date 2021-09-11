@@ -1,0 +1,26 @@
+{
+  "name": "mhmdhidr.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run sass\" \"npm run live\"",
+    "live": "five-server",
+    "sass": "sass --watch src/assets/scss:public/assets/css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MHMDHIDR/mhmdhidr.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MHMDHIDR/mhmdhidr.github.io/issues"
+  },
+  "homepage": "https://github.com/MHMDHIDR/mhmdhidr.github.io#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "sass": "^1.39.2"
+  }
+}

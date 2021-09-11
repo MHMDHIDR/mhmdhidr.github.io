@@ -1,0 +1,195 @@
+@use '../helpers/colors' as *;
+
+.hero {
+  background-color: $hero-bg-color;
+  overflow: hidden;
+  margin-bottom: 15vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  padding-top: 1rem;
+}
+
+.navbar.fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding-top: 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar.fixed .logo {
+  width: 6.5rem;
+}
+
+.navbar.fixed.shrink {
+  background-color: rgba(58, 58, 58, 0.75);
+  box-shadow: 0 0.125rem 0.3rem rgb(58 58 58 / 40%);
+  backdrop-filter: saturate(180%) blur(2px);
+}
+
+.navbar.fixed.shrink .logo {
+  width: 5.5rem;
+}
+
+.navbar a {
+  /*logo line hight*/
+  line-height: 1.2;
+}
+
+.navbar.fixed a {
+  margin-left: 2rem;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+.navbar.fixed.shrink .navbar-links {
+  padding: 1.3rem 0;
+}
+
+.navbar-links a {
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar-links a:not(.cta):before {
+  content: '';
+  height: 0.17rem;
+  width: 0;
+  position: absolute;
+  background-color: $primary-color;
+  bottom: 0.1rem;
+}
+
+.navbar-links a:hover::before {
+  width: 100%;
+}
+
+.navbar-links .cta {
+  border-radius: 0.3rem;
+  font-weight: 700;
+  background-color: rgba(35, 118, 235, 0.7);
+  padding: 0.15rem 0.5rem;
+}
+
+.content {
+  display: flex;
+  padding: 5rem 0 2rem;
+}
+
+.navbar.fixed + .content {
+  padding: 9rem 0 2rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  color: #fff;
+}
+
+.intro p {
+  font-size: 1.1em;
+  letter-spacing: 0.3em;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.intro h1 {
+  font-size: 2.35em;
+  line-height: 1.3;
+  margin: 0 0 5rem;
+  text-align: left;
+  text-transform: uppercase;
+  max-width: 67%;
+}
+
+.find-me-in p {
+  font-size: 0.95em;
+  font-family: 'Fira Code', sans-serif;
+}
+
+.find-me-in a {
+  display: inline-flex;
+  margin: 0.5rem;
+}
+
+.find-me-in a:hover {
+  transform: translateY(-0.2rem);
+}
+
+.find-me-in a:first-of-type {
+  margin-left: 0;
+}
+
+.projects-preview {
+  position: relative;
+  /* display: inline-flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: flex-end; */
+  /* gap: 0.5rem; */
+  flex: 1;
+}
+
+.projects-preview a {
+  position: absolute;
+  transition-duration: 0.7s;
+}
+
+.projects-preview a:first-child {
+  right: -100%;
+}
+.projects-preview a:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 200%;
+}
+.projects-preview a:last-child {
+  bottom: 0;
+  right: -100%;
+}
+.projects-preview .project-thumbnail {
+  border-radius: 0.6rem;
+}
+
+.hero .container > .cta {
+  font-size: 1.3em;
+  font-weight: 700;
+  padding: 0.3rem 3rem;
+  display: block;
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 1rem auto 2.5rem;
+}
+
+.heroCurve {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.heroCurve svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 132px;
+}
+
+.heroCurve .shape-fill {
+  fill: $hero-bg-color;
+}

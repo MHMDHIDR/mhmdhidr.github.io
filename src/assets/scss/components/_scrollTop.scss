@@ -1,0 +1,37 @@
+@use '../helpers/colors' as *;
+
+.scroll__top {
+  --size: 5vmax;
+  cursor: pointer;
+  width: var(--size);
+  height: var(--size);
+  max-width: 2.7rem;
+  max-height: 2.7rem;
+  border-radius: calc(var(--size) * 0.15);
+  background-color: $primary-color;
+  position: fixed;
+  right: 2rem;
+  pointer-events: none;
+  opacity: 0;
+  bottom: 20rem;
+}
+.scroll__top::after {
+  content: '⬆';
+  content: '☝🏽';
+  display: block;
+  height: var(--size);
+  text-align: center;
+  font-size: calc(var(--size) * 0.5);
+  color: $light-silver;
+}
+.scroll__top:hover {
+  background-color: $light-silver;
+}
+.scroll__top:hover::after {
+  color: $primary-color;
+}
+.scroll__top.active {
+  pointer-events: all;
+  bottom: 2rem;
+  opacity: 1;
+}

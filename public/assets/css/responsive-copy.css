@@ -74,12 +74,12 @@
     display: none;
   } */
 
-  .form-group input,
-  .form-group textarea {
+  .form__group input,
+  .form__group textarea {
     width: 100%;
   }
 
-  .form-group span {
+  .form__group span {
     left: 1rem;
   }
 }
@@ -99,7 +99,7 @@
     padding: 15rem 0 2rem;
   }
 
-  .form-group .cta {
+  .form__group .cta {
     margin-bottom: 1rem;
   }
 }

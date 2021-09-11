@@ -15,7 +15,7 @@ const nextBtn = document.querySelector('button[data-controls="next"]');
 prevBtn.innerHTML = `
   <img
     class="previous project-thumbnail"
-    src="assets/img/arrow.svg"
+    src="public/assets/img/arrow.svg"
     alt="previous project"
   />
 `;
@@ -23,7 +23,7 @@ prevBtn.innerHTML = `
 nextBtn.innerHTML = `
   <img
     class="next project-thumbnail"
-    src="assets/img/arrow.svg"
+    src="public/assets/img/arrow.svg"
     alt="next project"
   />
 `;
@@ -61,7 +61,7 @@ navLinks.forEach((link) => {
 // windows scrollTop button
 window.addEventListener('scroll', () => {
   // scroll to the top of page function
-  const scrollTop = document.querySelector('.scroll-top');
+  const scrollTop = document.querySelector('.scroll__top');
   const navFixed = document.querySelector('.navbar.fixed');
   // show and hide btn
   scrollTop.classList.toggle('active', window.scrollY > 500);
@@ -85,7 +85,7 @@ const form = {
   email: document.getElementById('email'),
   message: document.getElementById('msg'),
   submitBtn: document.getElementById('submitBtn'),
-  formMassages: document.querySelector('.form-group:last-of-type')
+  formMassages: document.querySelector('.form__group:last-of-type')
 };
 //send form
 form.submitBtn.addEventListener('click', (e) => {
