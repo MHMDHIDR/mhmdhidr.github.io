@@ -70,7 +70,7 @@ window.addEventListener('scroll', () => {
   // toggle shrink if user scrolled half hero section
   navFixed.classList.toggle(
     'shrink',
-    window.scrollY > document.querySelector('.hero').clientHeight / 2
+    window.scrollY > document.querySelector('.hero').clientHeight / 4
   );
 
   // when click scroll top
