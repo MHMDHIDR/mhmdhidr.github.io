@@ -3,8 +3,8 @@
 .scroll__top {
   --size: 5vmax;
 
-  width: clamp(1rem, var(--size), 5.75rem);
-  height: clamp(1rem, var(--size), 5.75rem);
+  width: clamp(1rem, var(--size), 2.5rem);
+  height: clamp(1rem, var(--size), 2.5rem);
   border-radius: calc(var(--size) * 0.13);
   background-color: $primary-color;
   position: fixed;
@@ -13,6 +13,7 @@
   opacity: 0;
   pointer-events: none;
   cursor: pointer;
+  overflow: hidden;
 
   &.active {
     pointer-events: all;
@@ -32,9 +33,11 @@
 
   &:hover {
     background-color: $light-silver;
+    border: 1px solid $primary-color;
 
     &::after {
       color: $primary-color;
+      margin-top: calc(var(--size) / 15 * -1);
     }
   }
 }

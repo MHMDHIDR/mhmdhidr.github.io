@@ -86,6 +86,7 @@ window.addEventListener('scroll', () => {
 const form = {
   name: document.getElementById('name'),
   email: document.getElementById('email'),
+  subject: document.getElementById('subject'),
   message: document.getElementById('msg'),
   submitBtn: document.getElementById('submitBtn'),
   formMassages: document.querySelector('.form__group:last-of-type')
@@ -97,6 +98,7 @@ form.submitBtn.addEventListener('click', (e) => {
   if (
     form.name.value.trim() === '' ||
     form.email.value.trim() === '' ||
+    form.subject.value.trim() === '' ||
     form.message.value.trim() === ''
   ) {
     alert('Please fill in all fields!');
