@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -51,6 +52,10 @@ textarea {
   text-transform: uppercase;
 }
 
+.txt-center {
+  text-align: center;
+}
+
 .project-thumbnail {
   width: 230px;
   height: 130px;
@@ -63,7 +68,6 @@ textarea {
 .section__title {
   font-family: 'Fira Code', sans-serif;
   font-size: 1.3em;
-  text-align: center;
   font-weight: 700;
   margin-bottom: 3rem;
 }

@@ -3,8 +3,6 @@
 .form {
   margin-top: 2rem;
 
-  text-align: center;
-
   &__group {
     position: relative;
     display: block;
@@ -46,8 +44,8 @@
       border: none;
     }
 
-    :last-child,
-    .cta-btns {
+    &:last-child,
+    &.cta-btns {
       border: none;
     }
   }

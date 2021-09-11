@@ -63,13 +63,16 @@ window.addEventListener('scroll', () => {
   // scroll to the top of page function
   const scrollTop = document.querySelector('.scroll__top');
   const navFixed = document.querySelector('.navbar.fixed');
+
   // show and hide btn
   scrollTop.classList.toggle('active', window.scrollY > 500);
+
   // toggle shrink if user scrolled half hero section
   navFixed.classList.toggle(
     'shrink',
     window.scrollY > document.querySelector('.hero').clientHeight / 2
   );
+
   // when click scroll top
   scrollTop.addEventListener('click', () => {
     window.scrollTo({
@@ -103,6 +106,3 @@ form.submitBtn.addEventListener('click', (e) => {
     ContactUs(form);
   }
 });
-
-// Copyrights current year
-document.querySelector('.year').innerHTML = new Date().getFullYear();

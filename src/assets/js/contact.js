@@ -22,6 +22,7 @@ const ContactUs = async (form) => {
       return;
     }
 
+    //if OK :D
     window.location.assign('thanksForReachingOut.html');
   } catch (err) {
     console.error(err);

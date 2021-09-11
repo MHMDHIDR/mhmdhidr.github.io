@@ -23,7 +23,6 @@
     <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script><![endif]-->
 
     <link rel="stylesheet" href="public/assets/css/main.css" />
-    <link rel="stylesheet" href="public/assets/css/responsive.css" />
   </head>
 
   <body>
@@ -49,7 +48,7 @@
               WELCOME TO MY WORLD
             </p>
             <h1>I’m here to Make your website idea a reality!</h1>
-            <div class="find-me-in">
+            <div class="find__me__in">
               <p class="upper">find me in</p>
               <a href="https://github.com/mhmdhidr" target="_blank">
                 <img
@@ -106,7 +105,10 @@
             </a>
           </div>
         </div>
-        <a class="cta upper" href="" data-link="latestProjects">See More Projects</a>
+        <a class="cta upper" href="#" data-link="latestProjects">
+          <span class="ping"></span>
+          See More Projects
+        </a>
       </div>
 
       <div class="heroCurve">
@@ -138,7 +140,7 @@
     <!-- ==================== Latest projects section start ==================== -->
     <section id="latestProjects" class="latest-projects sp">
       <div class="container">
-        <h2 class="section__title upper">latest projects</h2>
+        <h2 class="section__title txt-center upper">latest projects</h2>
         <div class="projects-carousel">
          
           <div class="projects">
@@ -196,7 +198,7 @@
     <!-- ==================== Services section start ==================== -->
     <section id="services" class="services sp">
       <div class="container">
-        <h2 class="section__title upper">Services</h2>
+        <h2 class="section__title txt-center upper">Services</h2>
         <div class="plans">
           <div class="plan">
             <!-- Plan -->
@@ -239,8 +241,8 @@
     <!-- ==================== How I can help you section start ==================== -->
     <section id="getInTouch" class="get-in-touch sp">
       <div class="container">
-        <h2 class="section__title upper">how i can help you</h2>
-        <form class="form">
+        <h2 class="section__title txt-center upper">how i can help you</h2>
+        <form class="form txt-center">
           <label for="name" class="form__group">
             <input type="text" id="name" name="name" title="Please type your name" required />
             <span>your name</span>
@@ -269,13 +271,48 @@
     <!-- ==================== How I can help you section end ==================== -->
 
     <!-- ==================== Footer section start ==================== -->
-    <footer class="sp">
-      <p class="section__title upper">mohammed hayder &copy; <span class="year"></span></p>
+    <footer class="footer sp txt-center">
+        <p class="section__title upper">
+          mohammed hayder &copy;
+          <script>document.write(new Date().getFullYear())</script>
+        </p>
+
+        <div class="find__me__in">
+          <p class="upper">find me in</p>
+          <a href="https://github.com/mhmdhidr" target="_blank">
+            <img
+              src="public/assets/icons/github.svg"
+              title="Github Projects"
+              alt="Github Projects"
+            />
+          </a>
+          <!-- <a href="https://codepen.io/mhmdhidr" target="_blank">
+            <img
+              src="public/assets/icons/codepen.svg"
+              title="Take a look at my Codepen"
+              alt="Take a look at my Codepen"
+            />
+          </a> -->
+          <a href="https://instagram.com/mo.hidr" target="_blank">
+            <img
+              src="public/assets/icons/instagram.svg"
+              title="Check My Instagram"
+              alt="Check My Instagram"
+            />
+          </a>
+          <a href="mailto:soft.eng.mohammed@gmail.com" target="_blank">
+            <img
+              src="public/assets/icons/email.svg"
+              title="Send me an Email"
+              alt="Send me an Email"
+            />
+          </a>
+        </div>
     </footer>
     <!-- ==================== Footer section end ==================== -->
 
     <!-- ==================== ScrollTop section start ==================== -->
-    <div class="scroll__top" title="Scroll to Top"></div>
+    <div class="scroll__top txt-center" title="Scroll to Top"></div>
     <!-- ==================== ScrollTop section end ==================== -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>

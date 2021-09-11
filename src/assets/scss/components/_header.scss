@@ -2,8 +2,8 @@
 
 .hero {
   background-color: $hero-bg-color;
-  overflow: hidden;
   margin-bottom: 15vh;
+  position: relative;
 }
 
 .navbar {
@@ -117,30 +117,26 @@
   max-width: 67%;
 }
 
-.find-me-in p {
+.find__me__in p {
   font-size: 0.95em;
   font-family: 'Fira Code', sans-serif;
 }
 
-.find-me-in a {
+.find__me__in a {
   display: inline-flex;
   margin: 0.5rem;
 }
 
-.find-me-in a:hover {
+.find__me__in a:hover {
   transform: translateY(-0.2rem);
 }
 
-.find-me-in a:first-of-type {
+.find__me__in a:first-of-type {
   margin-left: 0;
 }
 
 .projects-preview {
   position: relative;
-  /* display: inline-flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: flex-end; */
-  /* gap: 0.5rem; */
   flex: 1;
 }
 
@@ -166,7 +162,7 @@
 }
 
 .hero .container > .cta {
-  font-size: 1.3em;
+  font-size: clamp(1rem, 3.5vw, 2rem);
   font-weight: 700;
   padding: 0.3rem 3rem;
   display: block;
@@ -179,8 +175,6 @@
   position: absolute;
   left: 0;
   width: 100%;
-  overflow: hidden;
-  line-height: 0;
 }
 
 .heroCurve svg {
