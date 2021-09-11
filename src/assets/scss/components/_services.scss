@@ -1,11 +1,16 @@
 @use '../helpers/colors' as *;
 @use '../helpers/mixins' as *;
+@use 'sass:math';
 
 .plans {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 10px;
+
+  @include screen('larger') {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @include screen('large') {
     grid-template-columns: 1fr;
@@ -17,29 +22,37 @@
     justify-content: space-between;
 
     background-color: $light-silver;
-    width: 15rem;
-    padding: 1rem;
+    width: clamp(17rem, 70%, 20rem);
+    padding: 1rem 0rem 0rem;
     min-width: 27%;
     font-size: 1.05rem;
     border: 1px dashed $hero-bg-color;
     border-radius: 0.25rem;
-    text-align: center;
-
-    @include screen('large') {
-      width: 15rem;
-      width: clamp(15rem, 50%, 20rem);
-    }
 
     &__title {
       font-size: 1.3rem;
     }
 
     &__features {
+      $size: 1rem;
+
       list-style: none;
       margin: 0;
-      padding: 0 0 1rem;
+      padding: 0 0 $size;
       line-height: 2.5;
+      padding-left: 10px;
+
+      > li {
+        &::before {
+          content: url(../icons/check.svg);
+          display: inline-block;
+          vertical-align: -webkit-baseline-middle;
+          width: $size * 1.5;
+          margin-right: math.div($size, 2);
+        }
+      }
     }
+
     &.recommended {
       margin-top: -2rem;
 
@@ -63,10 +76,12 @@
         font-weight: 400;
       }
     }
+
     & .cta {
+      font-size: 1.2rem;
+      font-weight: bold;
       border: none;
       padding: 0.5rem;
-      cursor: pointer;
     }
   }
 }

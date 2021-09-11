@@ -1,19 +1,18 @@
 @use '../helpers/colors' as *;
 
 .scroll__top {
-  $size: 5vmax;
-  cursor: pointer;
-  width: $size;
-  height: $size;
-  max-width: 2.7rem;
-  max-height: 2.7rem;
-  border-radius: $size * 0.15;
+  --size: 5vmax;
+
+  width: clamp(1rem, var(--size), 5.75rem);
+  height: clamp(1rem, var(--size), 5.75rem);
+  border-radius: calc(var(--size) * 0.13);
   background-color: $primary-color;
   position: fixed;
   right: 2rem;
-  pointer-events: none;
-  opacity: 0;
   bottom: 20rem;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
 
   &.active {
     pointer-events: all;
@@ -22,12 +21,13 @@
   }
 
   &::after {
+    --size: 5vmax;
+
     content: '⬆';
-    content: '☝🏽';
     display: block;
-    height: $size;
-    font-size: $size * 0.5;
-    color: $light-silver;
+    height: 100%;
+    font-size: calc(var(--size) / 2);
+    color: #eaeaea;
   }
 
   &:hover {
