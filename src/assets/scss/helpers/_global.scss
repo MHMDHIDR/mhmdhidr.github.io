@@ -1,4 +1,5 @@
 @use './colors' as *;
+@use './mixins' as *;
 
 *,
 *::before,
@@ -37,6 +38,10 @@ body {
 .container {
   width: 95%;
   margin: auto;
+
+  @include screen('huge', min) {
+    width: 1024px;
+  }
 }
 
 button {

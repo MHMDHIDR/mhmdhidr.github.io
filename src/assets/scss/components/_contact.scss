@@ -1,4 +1,5 @@
 @use '../helpers/colors' as *;
+@use '../helpers/mixins' as *;
 
 .form {
   margin-top: 2rem;
@@ -21,6 +22,10 @@
       color: $darker-silver;
       background-color: transparent;
       border: none;
+
+      @include screen('large') {
+        width: 100%;
+      }
     }
 
     &:focus-within {
@@ -36,12 +41,20 @@
       padding: 0 0.5rem;
       text-transform: capitalize;
       color: $dark-silver;
+
+      @include screen('large') {
+        left: 1rem;
+      }
     }
 
     .cta {
       cursor: pointer;
       padding: 0.3rem 3rem;
       border: none;
+
+      @include screen('small') {
+        margin-bottom: 1rem;
+      }
     }
 
     &:last-child,

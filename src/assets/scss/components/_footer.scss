@@ -1,5 +1,6 @@
 @use '../helpers/colors' as *;
 
 .footer {
-  background-color: $dark-silver;
+  background-color: $hero-bg-color;
+  color: $light-silver;
 }

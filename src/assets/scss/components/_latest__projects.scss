@@ -1,4 +1,5 @@
 @use '../helpers/colors' as *;
+@use '../helpers/mixins' as *;
 
 .projects-carousel {
   overflow: hidden;
@@ -60,9 +61,21 @@
   .previous {
     transform: rotate(180deg);
     margin-right: 2rem;
+
+    img {
+      @include screen('larger') {
+        margin-right: 0.5rem;
+      }
+    }
   }
 
   .next {
     margin-left: 2rem;
+
+    img {
+      @include screen('larger') {
+        margin-left: 0.5rem;
+      }
+    }
   }
 }
