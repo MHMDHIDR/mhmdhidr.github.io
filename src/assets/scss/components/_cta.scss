@@ -6,10 +6,9 @@
   font-size: 1rem;
   background-color: $primary-color;
   color: #fff;
-  opacity: 0.87;
 
   &:hover,
   &:focus {
-    opacity: 1;
+    background-color: darken($primary-color, 4);
   }
 }
